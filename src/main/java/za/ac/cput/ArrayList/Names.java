@@ -1,6 +1,5 @@
 package za.ac.cput.ArrayList;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 /**
@@ -11,10 +10,14 @@ import java.util.*;
  */
 public class Names {
 
-
+    Collection student = new LinkedHashSet();
+    HashMap<Integer,String> phone = new HashMap<>();
+    HashSet<String> myCars = new HashSet<>();
+    ArrayList<String> fruits = new ArrayList<>();
+    boolean result = false;
+    String findValue;
+    String findSet;
     public Collection<String> people(){
-
-        Collection student = new LinkedHashSet();
 
         student.add("Nomzamo");
         student.add("Mpumelelo");
@@ -23,19 +26,25 @@ public class Names {
         student.add(56);
         student.add("Bruce");
 
-
         //removing an element
         student.remove("Bruce");
         student.remove(5.5);
 
-
         return student;
     }
 
+    public boolean findpeople(){
+        people();
+
+            if(student.contains("Nomzamo")){
+                System.out.println(student);
+                    result = true;
+                }
+            return result;
+    }
     //MAP
     public HashMap<Integer,String> cell()
     {
-        HashMap<Integer,String> phone = new HashMap<>();
         phone.put(100,"Apple");
         phone.put(101,"Samsung");
         phone.put(102,"Hauwei");
@@ -60,30 +69,47 @@ public class Names {
 
         return phone;
     }
+    public String findMap(){
+
+        cell();
+        findValue = phone.get(101);
+        System.out.println("calue for key element 101: " + findValue);
+        return findValue;
+    }
 
     //SET
     public HashSet<String> cars()
     {
-        HashSet<String> cars = new HashSet<>();
 
-        cars.add("BMW");
-        cars.add("Mercedes");
-        cars.add("Volkswagen");
-        cars.add("Mercedes");
-        cars.add("BMW");
+        myCars.add("BMW");
+        myCars.add("Corrola");
+        myCars.add("Volkswagen");
+        myCars.add("Mercedes");
+        myCars.add("Audi");
 
         //finding an item element
 
 
 
-        return cars;
+        return myCars;
     }
 
+    public String findSet(){
+        cars();
+
+            for (myCars: findSet) {
+                if (myCars.contains("Audi")) {
+                    System.out.println(myCars);
+                    result = true;
+                }
+            }
+
+        return findSet;
+    }
     //LIST
     public ArrayList<String> fruits()
     {
-        //List<String> fruits = new ArrayList<String>();
-        ArrayList<String> fruits = new ArrayList<>();
+
         fruits.add("Apple");
         fruits.add("Banana");
         fruits.add("Watermelon");
@@ -97,11 +123,14 @@ public class Names {
         //removing an element
         fruits.remove(2); // remove Watermelon
 
-
-        for (int i=0; i<fruits.size(); i++) {
-            String str = fruits.get(i);
-        }
-
         return  fruits;
+    }
+    public String findList(){
+
+        fruits();
+        findValue = fruits.get(2);
+        System.out.println("Finds the element in index 2" + findValue);
+
+        return findValue;
     }
 }
