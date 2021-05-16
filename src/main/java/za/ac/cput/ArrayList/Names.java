@@ -7,20 +7,79 @@ import java.util.*;
  * @author : Mpumelelo Magagula
  * Student Number: 218136021
  * Date: 11 May 2021
- * Description: this progeam display multiple array  list.
+ * Description: this programm display multiple array  list.
  */
 public class Names {
 
 
-    public Collection people(){
+    public Collection<String> people(){
+
+        Collection student = new LinkedHashSet();
+
+        student.add("Nomzamo");
+        student.add("Mpumelelo");
+        student.add(5.5);
+        student.add("Smith");
+        student.add(56);
+        student.add("Bruce");
 
 
-        Collection people = new LinkedHashSet();
+        //removing an element
+        student.remove("Bruce");
+        student.remove(5.5);
 
 
-
-        return people;
+        return student;
     }
+
+    //MAP
+    public HashMap<Integer,String> cell()
+    {
+        HashMap<Integer,String> phone = new HashMap<>();
+        phone.put(100,"Apple");
+        phone.put(101,"Samsung");
+        phone.put(102,"Hauwei");
+        phone.put(103,"Nokia");
+        phone.put(104,"Oppo");
+        phone.put(105,"Hauwei");
+
+        //finding an an element
+        phone.get("105"); // return Hauwei
+
+        //removing an object or element
+        phone.remove(102);
+
+        // Pull out live Collection of all the values.
+        Collection<String> values = phone.values();
+        System.out.println(values);
+
+        //displayng elements in any order
+        for (Map.Entry m: phone.entrySet()){
+            System.out.println(m.getKey()+ ""+ m.getValue());
+        }
+
+        return phone;
+    }
+
+    //SET
+    public HashSet<String> cars()
+    {
+        HashSet<String> cars = new HashSet<>();
+
+        cars.add("BMW");
+        cars.add("Mercedes");
+        cars.add("Volkswagen");
+        cars.add("Mercedes");
+        cars.add("BMW");
+
+        //finding an item element
+
+
+
+        return cars;
+    }
+
+    //LIST
     public ArrayList<String> fruits()
     {
         //List<String> fruits = new ArrayList<String>();
@@ -37,54 +96,12 @@ public class Names {
 
         //removing an element
         fruits.remove(2); // remove Watermelon
+
+
         for (int i=0; i<fruits.size(); i++) {
             String str = fruits.get(i);
         }
 
         return  fruits;
     }
-
-    public HashSet<String> cars()
-    {
-        HashSet<String> myCars = new HashSet<>();
-
-        myCars.add("BMW");
-        myCars.add("Mercedes");
-        myCars.add("Volkswagen");
-        myCars.add("Mercedes");
-        myCars.add("BMW");
-
-
-
-        return myCars;
-    }
-
-    public HashMap<Integer,String> cell()
-    {
-        HashMap<Integer,String> myPhone = new HashMap<>();
-        myPhone.put(100,"Apple");
-        myPhone.put(101,"Samsung");
-        myPhone.put(102,"Hauwei");
-        myPhone.put(103,"Nokia");
-        myPhone.put(104,"Oppo");
-        myPhone.put(105,"Hauwei");
-
-        //finding an an element
-        myPhone.get("105"); // return Hauwei
-
-        //removing an object or element
-        myPhone.remove(102);
-
-        // Pull out live Collection of all the values.
-        Collection<String> values = myPhone.values();
-        System.out.println(values);
-
-        //displayng elements in any order
-        for (Map.Entry m: myPhone.entrySet()){
-            System.out.println(m.getKey()+ ""+ m.getValue());
-        }
-
-        return myPhone;
-    }
-
 }

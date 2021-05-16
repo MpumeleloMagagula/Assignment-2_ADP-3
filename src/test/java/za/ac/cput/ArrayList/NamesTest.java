@@ -1,44 +1,42 @@
 package za.ac.cput.ArrayList;
 
-import org.junit.jupiter.api.BeforeEach;
+import com.sun.source.doctree.SeeTree;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * @author : Mpumelelo Magagula
- * Student Number: 218136021
- * Date: 11 May 2021
- * Description: this progeam diaplay number of name list.
- */
+
 class NamesTest {
 
-    @BeforeEach
-    void setUp() {
+    static  Names list = new Names();
 
-    }
     @Test
-    void test(){
+    void people() {
+    }
 
-       List<Names> namesList = new ArrayList<>();
-       Set<Names> namesSet = new HashSet<>();
-       Map<String, Names> namesMap = new HashMap<>();
-       Collection n = new LinkedHashSet();
+    @Test
+    void cell() {
+        Map<Integer, String> result= list.cell();
+       // assertThat(result.size(), is(4));
+    }
 
-
-        for (int i = 0; i <50; i++){
-            String firstNAme = "m" + 1;
-            Names n = new Names(firstNAme);
-            namesList.add(n);
-            namesSet.add(n);
-            namesMap.put("Pollo", n);
-        }
-        assertEquals(50, namesList.size());
-      //  assertEquals(50, namesSet.size());
-        assertEquals(50, namesMap.size());
+    @Test
+    void cars() {
+        Set<String> result = list.cars();
+        assertEquals(3,result.size());
 
     }
 
+    @Test
+    void fruits() {
+        List<String> result = list.fruits();
+        assertEquals(Arrays.asList("Apple","Banana","Watermelon","Orange"),result);
+    }
 }
