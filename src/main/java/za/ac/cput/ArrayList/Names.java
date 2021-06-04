@@ -42,6 +42,7 @@ public class Names {
                 }
             return result;
     }
+
     //MAP
     public HashMap<Integer,String> cell()
     {
@@ -97,12 +98,12 @@ public class Names {
     public String findSet(){
         cars();
 
-            for (myCars: findSet) {
-                if (myCars.contains("Audi")) {
-                    System.out.println(myCars);
-                    result = true;
-                }
-            }
+//            for (myCars: findSet) {
+//                if (myCars.contains("Audi")) {
+//                    System.out.println(myCars);
+//                    result = true;
+//                }
+//            }
 
         return findSet;
     }

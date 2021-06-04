@@ -4,10 +4,7 @@ import com.sun.source.doctree.SeeTree;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,6 +16,10 @@ class NamesTest {
 
     @Test
     void people() {
+        Collection student = new LinkedHashSet();
+
+        student.add("Mpumelelo");
+        student.add("Nomzamo");
     }
     @Test
     void findpeople(){
@@ -31,8 +32,47 @@ class NamesTest {
         Map<Integer, String> result= list.cell();
        // assertThat(result.size(), is(4));
     }
+    @Test
+    void add(){
+        HashSet<String> myCars = new HashSet<>();
+        myCars.add("BMW");
+        myCars.add("Corrola");
+        assertEquals(2,myCars.size());
 
+    }
 
+    @Test
+    void remove(){
+        HashSet<String> myCars = new HashSet<>();
+        myCars.add("BMW");
+        myCars.add("Corrola");
+        myCars.remove("Volkswagen");
+        System.out.println(myCars);
+        assertEquals(1, myCars.size());
+
+    }
+    @Test void RemoveList(){
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+
+        fruits.remove("Apple");
+        System.out.println(fruits);
+        assertEquals(1, fruits.size());
+    }
+
+    @Test
+    void removeMap() {
+        HashMap<Integer,String> phone = new HashMap<>();
+
+        phone.put( 100,"Apple");
+        phone.put( 101,"Samsung");
+
+        phone.remove(5);
+        System.out.println(phone);
+        assertEquals(1, phone.size());
+
+    }
     @Test
     void findMap(){
 
@@ -42,9 +82,14 @@ class NamesTest {
     }
 
     @Test
-    void cars() {
-        Set<String> result = list.cars();
-        assertEquals(3,result.size());
+    void carsSet() {
+        HashSet<String> myCars = new HashSet<>();
+        myCars.add("BMW");
+        myCars.add("Corrola");
+        myCars.add("Volkswagen");
+
+
+        assertEquals(3,myCars.size());
 
     }
     @Test
